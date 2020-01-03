@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: holaMundo
+    
+server:
+  port: 80
