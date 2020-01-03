@@ -3,4 +3,4 @@ spring:
     name: holaMundo
     
 server:
-  port: 80
+  port: 8082
