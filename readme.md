@@ -66,13 +66,26 @@ Especificamente fijemonos en:
 
 En el `<runtime>` estamos especificando que la Web App queremos que corra en Linux con el runtime de Java 8.
 
-Tambien podemos pasar parametros a la java vm con `<appSettings>`. En este caso especificamos que el MiSe escuchara en el 8083:
+Tambien podemos pasar parametros a la java vm con `<appSettings>`. En este caso especificamos que el MiSe escuchara en el 80 - cuando se ejecuto con `mvn spring-boot:run` toma el puerto del `Application.yaml`; con este setup lo que hacemos es que cuando se ejecute la Web App escuche en el 80:
 
 ```yml
   <appSettings>
 	<property>
 		<name>JAVA_OPTS</name>
-		<value>-D server.port=80</value>
+		<value>-D"server.port"=80</value>
 	</property>
   </appSettings>
 ```
+
+Para hacer el despliegue hacemos:
+
+```sh
+mvn clean package
+
+mvn azure-webapp:deploy
+```
+
+__Notese__ que si el _resource group_ y/o la __web app_ existiesen ya en Azure, se actualizaran. De lo contrario, se crean nuevas.
+
+El despliegue deja en `/wwwroot/` el archivo `app.jar`.
+
