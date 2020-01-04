@@ -40,8 +40,8 @@
         <version>1.8.0</version>  
         <configuration>
           <schemaVersion>V2</schemaVersion>
-          <resourceGroup>prueba_webaps</resourceGroup>
-          <appName>gs-spring-boot-1578054422803</appName>
+          <resourceGroup>prueba_webapp</resourceGroup>
+          <appName>testSpringBoot</appName>
           <pricingTier>F1</pricingTier>
           <region>westeurope</region>
           <runtime>
